@@ -21,5 +21,25 @@ int main(int argc, char* argv[])
         printErrorInterface(strErr);
         return -1;
     }
+    while(true)
+    {
+        struct pcap_pkthdr* header;
+        const u_char* packet;
+
+        int res = pcap_next_ex(handle, &header, &packet);
+        if(res == 0) continue;
+        if (res == PCAP_ERROR || res == PCAP_ERROR_BREAK) {
+			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
+			break;
+		}
+
+        CSignalStregth signalstrength;
+        bool checker = signalstrength.getPacketInfo(packet, argv[2]);
+        
+        if(checker)
+            signalstrength.printPacketPWR();
+        else
+            continue;
+    }
 
 }

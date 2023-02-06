@@ -16,6 +16,6 @@ public:
     C80211RadioHeader(const u_char* packet);
     ~C80211RadioHeader();
 
-    uint get80211Length();
+    uint get80211Size();
     int getsignalPower();
 };

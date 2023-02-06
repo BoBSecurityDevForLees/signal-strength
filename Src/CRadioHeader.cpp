@@ -20,7 +20,7 @@ C80211RadioHeader::~C80211RadioHeader()
 
 }
 
-uint C80211RadioHeader::get80211Length()
+uint C80211RadioHeader::get80211Size()
 {
     return this->it_len;
 }
