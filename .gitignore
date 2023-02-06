@@ -1,0 +1,4 @@
+Build/
+Build/*
+cmake-temp/
+cmake-temp/*
