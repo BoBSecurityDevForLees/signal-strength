@@ -1,4 +1,7 @@
+# 빌드 파일
 Build/
 Build/*
+
+# cmake-temp 파일
 cmake-temp/
 cmake-temp/*
